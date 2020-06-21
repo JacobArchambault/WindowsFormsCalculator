@@ -23,35 +23,19 @@ namespace WindowsFormsCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(
-                value1Textbox.Text,
-                out double input1)
-                &&
-                double.TryParse(value2Textbox.Text,
-                out double input2))
-            {
-                resultLabel.Text = (input1 + input2).ToString();
-                resultLabel.ForeColor = Color.Yellow;
-                resultLabel.Visible = true;
-            }
-            else
-            {
-                resultLabel.Text = "Value must be numeric and > 0.";
-                resultLabel.ForeColor = Color.Red;
-                resultLabel.Visible = true;
-            }
+            PrintResult((a, b) => (a + b));
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(
-                value1Textbox.Text,
-                out double input1)
-                &&
-                double.TryParse(value2Textbox.Text,
-                out double input2))
+            PrintResult((a, b) => (a * b));
+        }
+        private void PrintResult(Func<double, double, double> ofBinaryOp)
+        {
+            if (double.TryParse(value1Textbox.Text, out double input1)
+                && double.TryParse(value2Textbox.Text, out double input2))
             {
-                resultLabel.Text = (input1 * input2).ToString();
+                resultLabel.Text = (ofBinaryOp(input1, input2)).ToString();
                 resultLabel.ForeColor = Color.Yellow;
                 resultLabel.Visible = true;
             }
@@ -61,7 +45,6 @@ namespace WindowsFormsCalculator
                 resultLabel.ForeColor = Color.Red;
                 resultLabel.Visible = true;
             }
-
         }
 
         private double GetDouble(TextBox fromTextBox)
