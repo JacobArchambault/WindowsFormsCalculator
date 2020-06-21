@@ -142,14 +142,6 @@
         #endregion
 
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label length;
-        private System.Windows.Forms.Label width;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label resultLabel;
         private System.Windows.Forms.Button multiplyButton;
         private System.Windows.Forms.Label value1Label;
