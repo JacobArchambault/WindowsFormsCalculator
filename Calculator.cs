@@ -25,8 +25,8 @@ namespace WindowsFormsCalculator
         {
             try
             {
-                double input1 = GetDouble(textBox1);
-                double input2 = GetDouble(textBox2);
+                double input1 = GetDouble(value1Textbox);
+                double input2 = GetDouble(value2Textbox);
                 resultLabel.Text = (input1 + input2).ToString();
                 resultLabel.ForeColor = Color.Yellow;
                 resultLabel.Visible = true;
@@ -43,8 +43,8 @@ namespace WindowsFormsCalculator
         {
             try
             {
-                double input1 = GetDouble(textBox1);
-                double input2 = GetDouble(textBox2);
+                double input1 = GetDouble(value1Textbox);
+                double input2 = GetDouble(value2Textbox);
                 resultLabel.Text = (input1 * input2).ToString();
                 resultLabel.ForeColor = Color.Yellow;
                 resultLabel.Visible = true;
