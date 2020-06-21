@@ -23,15 +23,18 @@ namespace WindowsFormsCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (double.TryParse(
+                value1Textbox.Text,
+                out double input1)
+                &&
+                double.TryParse(value2Textbox.Text,
+                out double input2))
             {
-                double input1 = GetDouble(value1Textbox);
-                double input2 = GetDouble(value2Textbox);
                 resultLabel.Text = (input1 + input2).ToString();
                 resultLabel.ForeColor = Color.Yellow;
                 resultLabel.Visible = true;
             }
-            catch
+            else
             {
                 resultLabel.Text = "Value must be numeric and > 0.";
                 resultLabel.ForeColor = Color.Red;
@@ -41,15 +44,18 @@ namespace WindowsFormsCalculator
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
+            if (double.TryParse(
+                value1Textbox.Text,
+                out double input1)
+                &&
+                double.TryParse(value2Textbox.Text,
+                out double input2))
             {
-                double input1 = GetDouble(value1Textbox);
-                double input2 = GetDouble(value2Textbox);
                 resultLabel.Text = (input1 * input2).ToString();
                 resultLabel.ForeColor = Color.Yellow;
                 resultLabel.Visible = true;
             }
-            catch
+            else
             {
                 resultLabel.Text = "Value must be numeric and > 0.";
                 resultLabel.ForeColor = Color.Red;
@@ -60,9 +66,8 @@ namespace WindowsFormsCalculator
 
         private double GetDouble(TextBox fromTextBox)
         {
-            double myDouble = 0;
             // Ensure user enters a number
-            myDouble = double.Parse(fromTextBox.Text);
+            double.TryParse(fromTextBox.Text, out double myDouble);
             return myDouble;
         }
 
