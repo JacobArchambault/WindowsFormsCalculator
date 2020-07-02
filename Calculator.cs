@@ -45,7 +45,7 @@ namespace WindowsFormsCalculator
                 else
                 {
                     // Otherwise, give the reader a warning message
-                    resultLabel.Text = "Both values must be numeric and > 0.";
+                    resultLabel.Text = "Both values must be numeric.";
                     // ...in red.
                     resultLabel.ForeColor = Color.Red;
                 }
