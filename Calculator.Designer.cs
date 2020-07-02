@@ -36,12 +36,14 @@
             this.value2Label = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.resultLabel = new System.Windows.Forms.Label();
+            this.divideButton = new System.Windows.Forms.Button();
+            this.subtractButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.MidnightBlue;
-            this.addButton.Location = new System.Drawing.Point(191, 118);
+            this.addButton.Location = new System.Drawing.Point(191, 238);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(112, 34);
             this.addButton.TabIndex = 0;
@@ -106,22 +108,46 @@
             // 
             // resultLabel
             // 
-            this.resultLabel.AutoSize = true;
+            this.resultLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.resultLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.resultLabel.Location = new System.Drawing.Point(44, 195);
+            this.resultLabel.Location = new System.Drawing.Point(44, 275);
             this.resultLabel.Name = "resultLabel";
             this.resultLabel.Size = new System.Drawing.Size(259, 25);
             this.resultLabel.TabIndex = 7;
             this.resultLabel.Text = "Value must be numeric and > 0";
-            this.resultLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.resultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.resultLabel.Visible = false;
+            // 
+            // divideButton
+            // 
+            this.divideButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.divideButton.Location = new System.Drawing.Point(191, 118);
+            this.divideButton.Name = "divideButton";
+            this.divideButton.Size = new System.Drawing.Size(112, 34);
+            this.divideButton.TabIndex = 8;
+            this.divideButton.Text = "Divide";
+            this.divideButton.UseVisualStyleBackColor = false;
+            this.divideButton.Click += new System.EventHandler(this.divideButton_Click);
+            // 
+            // subtractButton
+            // 
+            this.subtractButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.subtractButton.Location = new System.Drawing.Point(191, 198);
+            this.subtractButton.Name = "subtractButton";
+            this.subtractButton.Size = new System.Drawing.Size(112, 34);
+            this.subtractButton.TabIndex = 9;
+            this.subtractButton.Text = "Subtract";
+            this.subtractButton.UseVisualStyleBackColor = false;
+            this.subtractButton.Click += new System.EventHandler(this.subtractButton_Click);
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
-            this.ClientSize = new System.Drawing.Size(315, 286);
+            this.ClientSize = new System.Drawing.Size(315, 308);
+            this.Controls.Add(this.subtractButton);
+            this.Controls.Add(this.divideButton);
             this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.title);
             this.Controls.Add(this.value2Label);
@@ -148,5 +174,7 @@
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.TextBox value1Textbox;
         private System.Windows.Forms.TextBox value2Textbox;
+        private System.Windows.Forms.Button divideButton;
+        private System.Windows.Forms.Button subtractButton;
     }
 }
